@@ -20,7 +20,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '美術学部全科の学部生および大学院生の卒業・修了制作展。上野キャンパスおよび東京都美術館で開催。',
         imageUrl: '',
         tags: ['美術', '彫刻', '絵画'],
-        officialUrl: 'https://diploma-works.geidai.ac.jp/'
+        officialUrl: 'https://www.geidai.ac.jp/'
     },
     {
         id: 'musabi-2026',
@@ -40,7 +40,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: 'キャンパス全体を使用した大規模な展覧会。学部・大学院の全学科が参加。',
         imageUrl: '',
         tags: ['デザイン', 'アート', '建築'],
-        officialUrl: 'https://sotsuten.musabi.ac.jp/'
+        officialUrl: 'https://www.musabi.ac.jp/'
     },
     {
         id: 'tamabi-a-2026',
@@ -60,7 +60,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '日本画、油画、版画、彫刻、工芸学科などのファインアート系学科を中心とした展示。',
         imageUrl: '',
         tags: ['アート', '美術'],
-        officialUrl: 'https://www2.tamabi.ac.jp/cgi-bin/pro/gw/'
+        officialUrl: 'https://www.tamabi.ac.jp/'
     },
     {
         id: 'tamabi-b-2026',
@@ -80,7 +80,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: 'グラフィックデザイン、プロダクト、テキスタイル、メディア芸術などデザイン系学科の展示。',
         imageUrl: '',
         tags: ['デザイン', 'グラフィック', 'プロダクト'],
-        officialUrl: 'https://www2.tamabi.ac.jp/cgi-bin/pro/gw/'
+        officialUrl: 'https://www.tamabi.ac.jp/'
     },
     {
         id: 'zokei-2026',
@@ -100,7 +100,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '学部生・大学院生の卒業研究・制作を一堂に展示する「ZOKEI展」。',
         imageUrl: '',
         tags: ['デザイン', 'アート', 'アニメーション'],
-        officialUrl: 'https://www.zokei.ac.jp/campuslife/zokeiten/'
+        officialUrl: 'https://www.zokei.ac.jp/'
     },
     {
         id: 'joshibi-2026',
@@ -120,7 +120,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '大学、短期大学部、付属高校の選抜卒業制作作品展。',
         imageUrl: '',
         tags: ['アート', 'デザイン', '女子美'],
-        officialUrl: 'https://www.joshibi.ac.jp/sotsuten'
+        officialUrl: 'https://www.joshibi.ac.jp/'
     },
 
     // --- 関東 (専門学校) ---
@@ -142,7 +142,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '日本初のデザイン専門学校による集大成。渋谷の中心で開催。',
         imageUrl: '',
         tags: ['デザイン', 'バウハウス'],
-        officialUrl: 'https://www.kds.ac.jp/sotsuten/'
+        officialUrl: 'https://www.kds.ac.jp/'
     },
     {
         id: 'bunka-2026',
@@ -162,7 +162,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '日本を代表する服飾学校の最先端ファッション展示。',
         imageUrl: '',
         tags: ['ファッション', '衣装'],
-        officialUrl: 'https://www.bunka-fc.ac.jp/event/sotsuten/'
+        officialUrl: 'https://www.bunka-fc.ac.jp/'
     },
     {
         id: 'mode-tokyo-2026',
@@ -182,7 +182,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: 'ファッションショートデジタルコンテンツを融合した一日限りの巨大イベント。',
         imageUrl: '',
         tags: ['ファッション', 'イベント'],
-        officialUrl: 'https://www.mode.ac.jp/tokyo/mirai'
+        officialUrl: 'https://www.mode.ac.jp/tokyo'
     },
     {
         id: 'nippon-kogakuin-2026',
@@ -202,7 +202,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: 'ゲーム、CG、アニメ、デザインなど多岐にわたる作品展示。',
         imageUrl: '',
         tags: ['ゲーム', 'アニメ', 'CG'],
-        officialUrl: 'https://www.neec.ac.jp/exhibition/'
+        officialUrl: 'https://www.neec.ac.jp/'
     },
 
     // --- 関西 (大学・専門) ---
@@ -224,7 +224,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '京都駅近くの新キャンパスで開催される、伝統と革新の作品展。',
         imageUrl: '',
         tags: ['アート', '京都', '伝統'],
-        officialUrl: 'https://www.kcua.ac.jp/2025/02/07/sakuhinten2024/'
+        officialUrl: 'https://www.kcua.ac.jp/'
     },
     {
         id: 'osaka-geidai-2026',
@@ -244,7 +244,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '西日本最大級の総合芸術大学による大規模卒業展。',
         imageUrl: '',
         tags: ['アート', 'メディア', 'デザイン'],
-        officialUrl: 'https://www.osaka-geidai.ac.jp/geidai/sotsuten/'
+        officialUrl: 'https://www.osaka-geidai.ac.jp/'
     },
     {
         id: 'mode-osaka-2026',
@@ -264,7 +264,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '関西地区の学生による、創造性あふれるファッションショー。',
         imageUrl: '',
         tags: ['ファッション', 'モード'],
-        officialUrl: 'https://www.mode.ac.jp/osaka/mirai'
+        officialUrl: 'https://www.mode.ac.jp/osaka'
     },
 
     // --- その他地域 ---
@@ -286,7 +286,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '札幌で開催される、北の次世代アーティストたちの作品展。',
         imageUrl: '',
         tags: ['美術', '教育'],
-        officialUrl: 'https://www.hokkyodai.ac.jp/fineart/exhibition/'
+        officialUrl: 'https://www.hokkyodai.ac.jp/'
     },
     {
         id: 'mode-nagoya-2026',
@@ -306,7 +306,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '名古屋地区最大級の学生クリエイションの祭典。',
         imageUrl: '',
         tags: ['ファッション', '名古屋'],
-        officialUrl: 'https://www.mode.ac.jp/nagoya/mirai'
+        officialUrl: 'https://www.mode.ac.jp/nagoya'
     },
     {
         id: 'okinawa-geidai-2026',
@@ -326,7 +326,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '琉球の伝統工芸と現代美術が融合する沖縄ならではの展示。',
         imageUrl: '',
         tags: ['工芸', '琉球', 'アート'],
-        officialUrl: 'https://www.okigei.ac.jp/art/exhibition/'
+        officialUrl: 'https://www.okigei.ac.jp/'
     },
     // --- 中部・名古屋 (追加) ---
     {
@@ -347,7 +347,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '滋慶学園COMグループによる大規模合同展。デザイン、IT、エンタメの祭典。',
         imageUrl: '',
         tags: ['デザイン', 'ゲーム', 'テクノロジー'],
-        officialUrl: 'https://www.jikeicom.jp/weare2026/'
+        officialUrl: 'https://www.nca.ac.jp/'
     },
     {
         id: 'kanazawa-2026',
@@ -367,7 +367,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '金沢21世紀美術館で開催される、工芸とデザイン、美術の響宴。',
         imageUrl: '',
         tags: ['工芸', 'デザイン', 'アート'],
-        officialUrl: 'https://www.kanazawa-bidai.ac.jp/sotsuten/'
+        officialUrl: 'https://www.kanazawa-bidai.ac.jp/'
     },
     {
         id: 'aichi-2026',
@@ -387,7 +387,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '中部地方を代表する公立芸術大学の力作展示。',
         imageUrl: '',
         tags: ['美術', '日本画', 'アート'],
-        officialUrl: 'https://www.aichi-fam-u.ac.jp/art/department/graduation_works/'
+        officialUrl: 'https://www.aichi-fam-u.ac.jp/'
     },
 
     // --- その他主要大学 ---
@@ -409,7 +409,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '「日藝」8学科の総合力を発揮した博覧会。',
         imageUrl: '',
         tags: ['アート', '写真', '演劇'],
-        officialUrl: 'https://www.art.nihon-u.ac.jp/event/hakurankai/'
+        officialUrl: 'https://www.art.nihon-u.ac.jp/'
     },
     {
         id: 'akita-2026',
@@ -429,7 +429,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '新しい「アーツ＆ルーツ」を探求する東北の美大。',
         imageUrl: '',
         tags: ['工芸', 'アート'],
-        officialUrl: 'https://www.akibi.ac.jp/sotsuten/'
+        officialUrl: 'https://www.akibi.ac.jp/'
     },
     {
         id: 'kyusan-2026',
@@ -449,7 +449,7 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '九州最大級の総合大学芸術学部による展示。',
         imageUrl: '',
         tags: ['デザイン', '写真', 'アート'],
-        officialUrl: 'https://www.kyusan-u.ac.jp/faculty/geijutsu/graduation_exhibition/'
+        officialUrl: 'https://www.kyusan-u.ac.jp/'
     },
     {
         id: 'yamagata-2026',
@@ -469,6 +469,6 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         description: '東北のデザイン・アートの拠点、芸工大の集大成。',
         imageUrl: '',
         tags: ['デザイン', '東北', 'コミュニティ'],
-        officialUrl: 'https://www.tuad.ac.jp/sotsuten/'
+        officialUrl: 'https://www.tuad.ac.jp/'
     }
 ];

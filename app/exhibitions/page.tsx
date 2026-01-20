@@ -83,7 +83,7 @@ export default function ExhibitionsPage() {
                                     <span className={styles.regionHighlight}>
                                         {exhibition.location.region}
                                     </span>
-                                    <Button size="sm" variant="outline">卒展サイト <ArrowRight size={14} /></Button>
+                                    <Button size="sm" variant="outline">公式サイト <ArrowRight size={14} /></Button>
                                 </div>
                             </CardFooter>
                         </Card>
