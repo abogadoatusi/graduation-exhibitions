@@ -4,6 +4,13 @@ import { Button } from '@/components/ui/Button';
 import { MapPin, Calendar, Globe, ArrowLeft, Share2 } from 'lucide-react';
 import styles from './page.module.css';
 
+// Required for static export
+export async function generateStaticParams() {
+    return MOCK_EXHIBITIONS.map((exhibition) => ({
+        id: exhibition.id,
+    }));
+}
+
 interface Props {
     params: {
         id: string;
@@ -18,7 +25,7 @@ export default function ExhibitionDetailPage({ params }: Props) {
             <div className={styles.notFound}>
                 <h1>Exhibition not found</h1>
                 <Link href="/exhibitions">
-                    <Button>Back to List</Button>
+                    <Button>一覧に戻る</Button>
                 </Link>
             </div>
         );
@@ -27,7 +34,7 @@ export default function ExhibitionDetailPage({ params }: Props) {
     return (
         <article className={styles.container}>
             <Link href="/exhibitions" className={styles.backLink}>
-                <ArrowLeft size={16} /> Back to Exhibitions
+                <ArrowLeft size={16} /> 展覧会一覧に戻る
             </Link>
 
             <div className={styles.header}>
@@ -39,35 +46,37 @@ export default function ExhibitionDetailPage({ params }: Props) {
                         <div className={styles.metaItem}>
                             <Calendar size={20} className={styles.icon} />
                             <div>
-                                <span className={styles.metaLabel}>Date</span>
-                                <p>{exhibition.startDate} - {exhibition.endDate}</p>
+                                <span className={styles.metaLabel}>開催期間</span>
+                                <p>{new Date(exhibition.startDate).toLocaleDateString('ja-JP')} - {new Date(exhibition.endDate).toLocaleDateString('ja-JP')}</p>
                             </div>
                         </div>
                         <div className={styles.metaItem}>
                             <MapPin size={20} className={styles.icon} />
                             <div>
-                                <span className={styles.metaLabel}>Location</span>
+                                <span className={styles.metaLabel}>開催場所</span>
                                 <p>{exhibition.location.name}</p>
                                 <p className={styles.address}>{exhibition.location.address}</p>
                             </div>
                         </div>
                     </div>
                     <div className={styles.actions}>
-                        <Button variant="outline"><Share2 size={16} /> Share</Button>
-                        <Link href={exhibition.officialUrl || '#'} target="_blank">
-                            <Button>Official Website <Globe size={16} /></Button>
-                        </Link>
+                        {/* <Button variant="outline"><Share2 size={16} /> 共有</Button> */}
+                        {exhibition.officialUrl && (
+                            <Link href={exhibition.officialUrl} target="_blank">
+                                <Button>公式サイト <Globe size={16} /></Button>
+                            </Link>
+                        )}
                     </div>
                 </div>
             </div>
 
-            <div className={styles.heroImageWrapper}>
+            {/* <div className={styles.heroImageWrapper}>
                 <img src={exhibition.imageUrl} alt={exhibition.title} className={styles.heroImage} />
-            </div>
+            </div> */}
 
             <div className={styles.content}>
                 <div className={styles.section}>
-                    <h2>About</h2>
+                    <h2>概要</h2>
                     <p className={styles.description}>{exhibition.description}</p>
                     <div className={styles.tags}>
                         {exhibition.tags.map(tag => (
@@ -77,17 +86,15 @@ export default function ExhibitionDetailPage({ params }: Props) {
                 </div>
 
                 <div className={styles.section}>
-                    <h2>Access</h2>
+                    <h2>アクセス</h2>
                     <div className={styles.mapPlaceholder}>
-                        {/* Map placeholder or embed link */}
-                        <p>Map View Loading...</p>
                         <a
                             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(exhibition.location.address)}`}
                             target="_blank"
                             rel="noreferrer"
                             className={styles.mapLink}
                         >
-                            Open in Google Maps
+                            Google Mapsで開く
                         </a>
                     </div>
                 </div>
