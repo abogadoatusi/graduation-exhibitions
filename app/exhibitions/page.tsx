@@ -17,7 +17,7 @@ export default function ExhibitionsPage() {
             <div className={styles.controls}>
                 <div className={styles.searchWrapper}>
                     <Search className={styles.searchIcon} size={20} />
-                    <Input
+                    <input
                         type="text"
                         placeholder="学校名やキーワードで検索..."
                         className={styles.searchInput}
