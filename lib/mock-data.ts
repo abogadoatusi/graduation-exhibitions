@@ -375,8 +375,8 @@ export const MOCK_EXHIBITIONS: Exhibition[] = [
         school: '愛知県立芸術大学',
         schoolType: 'University',
         department: '美術学部',
-        startDate: '2026-02-18',
-        endDate: '2026-02-23',
+        startDate: '2026-02-20',
+        endDate: '2026-02-26',
         location: {
             name: '愛知県美術館',
             address: '名古屋市東区東桜1-13-2',
