@@ -65,6 +65,7 @@
 .calendar {
     border: 1px solid var(--border);
     border-radius: 12px;
+    /* overflow: hidden;  <-- Removed to let content be seen clearly if needed, but border radius masks it anyway */
     overflow: hidden;
     background-color: white;
     box-shadow: var(--shadow-sm);
@@ -88,12 +89,13 @@
 .daysGrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    /* Ensure rows are equal height if content differs */
+    /* Ensure rows track content size automatically */
     grid-auto-rows: 1fr;
 }
 
 .dayCell {
     min-height: 100px;
+    /* Minimum height */
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     padding: 0.25rem;
@@ -101,8 +103,6 @@
     background: white;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    /* Prevent cell expansion from breaking grid visual */
 }
 
 .dayCell:nth-child(7n) {
@@ -131,40 +131,31 @@
 .eventList {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
     flex: 1;
-    overflow-y: auto;
-    /* Allow scrolling inside cell if too many events */
-    padding-right: 2px;
-    /* For scrollbar space */
-    scrollbar-width: none;
-}
-
-.eventList::-webkit-scrollbar {
-    display: none;
 }
 
 .eventDot {
     display: block;
     font-size: 0.65rem;
-    /* Smaller font */
     background-color: var(--color-pale-pink);
     color: #c2185b;
-    padding: 2px 4px;
+    padding: 3px 6px;
     border-radius: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    /* Allow wrapping */
+    white-space: normal;
+    word-break: break-all;
+    /* Ensure long words like english titles break if needed (though Japanese breaks naturaly) */
+    line-height: 1.25;
+
     transition: all 0.2s;
     text-decoration: none;
     font-weight: 600;
-    line-height: 1.2;
 }
 
 .eventDot:hover {
     background-color: var(--color-rose-pink);
     color: white;
-    z-index: 10;
-    position: relative;
-    /* Bring to font on hover */
+    transform: translateY(-1px);
 }
