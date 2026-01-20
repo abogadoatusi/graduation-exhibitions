@@ -89,8 +89,6 @@
 .daysGrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    /* Ensure rows track content size automatically */
-    grid-auto-rows: 1fr;
 }
 
 .dayCell {
