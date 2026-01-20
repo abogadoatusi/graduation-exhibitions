@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { MapPin, ArrowRight } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import ExhibitionSlideshow from '@/components/features/ExhibitionSlideshow';
 import { MOCK_EXHIBITIONS } from '@/lib/mock-data';
 import styles from './page.module.css';
@@ -34,7 +34,7 @@ export default function Home() {
           現在地から探す
         </h2>
         {/* Ensure Map has height */}
-        <div className={styles.homeMapWrapper} style={{ height: '350px', width: '100%', position: 'relative', borderRadius: '16px', overflow: 'hiddenbox-shadow: 0 4px 12px rgba(0,0,0,0.08)' }}>
+        <div className={styles.homeMapWrapper} style={{ height: '350px', width: '100%', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }}>
           <HomeMapWrapper exhibitions={MOCK_EXHIBITIONS} />
         </div>
         <div style={{ textAlign: 'center', marginTop: '1rem' }}>
