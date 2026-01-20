@@ -1,66 +1,94 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from 'next/link';
+import { MOCK_EXHIBITIONS } from '@/lib/mock-data';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/Card';
+import { Button } from '@/components/ui/Button';
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
+import styles from './page.module.css';
+import HomeMapWrapper from '@/components/features/HomeMapWrapper';
 
 export default function Home() {
+  const featuredExhibitions = MOCK_EXHIBITIONS.slice(0, 3);
+  const regions = ['Kanto', 'Kinki', 'Hokkaido', 'Kyushu'];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className={styles.container}>
+      <section className={styles.hero}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>
+            Art & Design <br />
+            <span className={styles.highlight}>Graduation Portal</span>
+          </h1>
+          <p className={styles.heroText}>
+            Explore graduation works from across Japan.
           </p>
+          <div className={styles.heroActions}>
+            <Link href="/exhibitions">
+              <Button size="lg">Find Exhibitions</Button>
+            </Link>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Portal Quick Links */}
+      <section className={styles.categorySection}>
+        <h2 className={styles.sectionTitle}>Browse by Region</h2>
+        <div className={styles.categoryGrid}>
+          {regions.map(region => (
+            <Link key={region} href={`/exhibitions?region=${region}`} className={styles.categoryCard}>
+              {region}
+            </Link>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* Embedded Map Section */}
+      <section className={styles.section} style={{ backgroundColor: 'var(--color-bg-sub)' }}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>Map View</h2>
+          <p className={styles.sectionDesc}>Find exhibitions near you</p>
+        </div>
+        <div className={styles.homeMapWrapper}>
+          <HomeMapWrapper />
+        </div>
+        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+          <Link href="/map">
+            <Button variant="outline">View Fullscreen Map</Button>
+          </Link>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>Featured Exhibitions</h2>
+          <Link href="/exhibitions" className={styles.viewAll}>View All →</Link>
+        </div>
+
+        <div className={styles.grid}>
+          {featuredExhibitions.map((exhibition) => (
+            <Link key={exhibition.id} href={`/exhibitions/${exhibition.id}`}>
+              <Card hoverable className={styles.card}>
+                <div className={styles.imageWrapper}>
+                  <img src={exhibition.imageUrl} alt={exhibition.title} className={styles.image} />
+                  <div className={styles.regionBadge}>{exhibition.location.region}</div>
+                </div>
+                <CardHeader>
+                  <CardTitle className={styles.cardTitle}>{exhibition.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className={styles.infoRow}>
+                    <MapPin size={16} />
+                    <span>{exhibition.location.name}</span>
+                  </div>
+                  <div className={styles.infoRow}>
+                    <Calendar size={16} />
+                    <span>{exhibition.startDate} - {exhibition.endDate}</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
-  );
+  )
 }

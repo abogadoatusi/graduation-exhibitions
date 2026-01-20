@@ -1,0 +1,175 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.notFound {
+    text-align: center;
+    padding: 6rem;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-sub);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: var(--color-primary);
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.school {
+    font-size: 1.25rem;
+    color: var(--color-text-sub);
+    margin-bottom: 2rem;
+}
+
+.metaWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--color-bg-sub);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+    .metaWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .meta {
+        flex-direction: row;
+        gap: 3rem;
+    }
+}
+
+.metaItem {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.metaLabel {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-text-sub);
+    margin-bottom: 0.25rem;
+}
+
+.address {
+    font-size: 0.875rem;
+    color: var(--color-text-sub);
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.heroImageWrapper {
+    width: 100%;
+    aspect-ratio: 21/9;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    background-color: #eee;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.description {
+    line-height: 1.8;
+    color: var(--color-text-main);
+    margin-bottom: 2rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag {
+    background-color: var(--color-bg-sub);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    color: var(--color-text-sub);
+}
+
+.mapPlaceholder {
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-text-sub);
+}
+
+.mapLink {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: 500;
+}
