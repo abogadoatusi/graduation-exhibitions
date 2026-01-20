@@ -1,46 +1,42 @@
 :root {
-  /* User Requested Pastel Palette */
+  /* User Requested Pastel Palette - Adjusted for Readability v2 */
   --color-cream: #F7F6D3;
   --color-lime: #B8DB80;
   --color-pale-pink: #FFE4EF;
   --color-rose-pink: #F39EB6;
 
-  /* Text Colors */
-  --text-main: #333333;
-  --text-sub: #666666;
+  /* High Contrast Text Colors - Darker for legibility */
+  --text-main: #1f1f1f;
+  /* Almost black */
+  --text-sub: #444444;
+  /* Dark gray */
   --text-white: #ffffff;
 
   /* Semantic mappings */
-  --background: var(--color-cream);
+  --background: #FCFCF5;
+  /* Off-white cream for better contrast */
   --foreground: var(--text-main);
 
   --primary: var(--color-rose-pink);
-  --primary-foreground: var(--text-white);
+  --primary-foreground: #332222;
+  /* Dark brownish text on pink buttons */
 
   --secondary: var(--color-lime);
-  --secondary-foreground: #3f522e;
+  --secondary-foreground: #223311;
+  /* Dark green text on lime buttons */
 
-  --muted: rgba(255, 255, 255, 0.5);
+  --muted: #eeeeee;
   --muted-foreground: var(--text-sub);
 
-  --border: #e0e0bd;
+  --border: #d0d0b0;
+  /* Visible border color */
   --input: #ffffff;
   --ring: var(--color-rose-pink);
 
   --radius: 12px;
   --header-height: 60px;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode adjustments if needed, keeping pastel vibe but dimmed */
-    --background: #2a2a2a;
-    --foreground: #f0f0f0;
-    --text-main: #f0f0f0;
-    --text-sub: #aaaaaa;
-  }
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -48,14 +44,6 @@
   padding: 0;
   margin: 0;
   -webkit-tap-highlight-color: transparent;
-  /* App-like touch */
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  height: 100%;
 }
 
 body {
@@ -66,22 +54,17 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
 a {
   color: inherit;
   text-decoration: none;
-}
-
-/* Scrollbar hiding for app-like feel */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
 }
