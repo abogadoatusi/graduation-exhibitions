@@ -1,12 +1,9 @@
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { MapPin } from 'lucide-react';
 import ExhibitionSlideshow from '@/components/features/ExhibitionSlideshow';
+import HomeMapWrapper from '@/components/features/HomeMapWrapper';
 import { MOCK_EXHIBITIONS } from '@/lib/mock-data';
 import styles from './page.module.css';
-
-// Dynamically import Map to match client-side requirements (no SSR for Leaflet)
-const HomeMapWrapper = dynamic(() => import('@/components/features/Map'), { ssr: false });
 
 export default function Home() {
   const regions = [

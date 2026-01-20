@@ -1,23 +1,15 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { Exhibition } from '@/lib/types';
 
-const MapComponent = dynamic(() => import('./Map'), {
-    ssr: false,
-    loading: () => (
-        <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '100%',
-            backgroundColor: '#f5f5f5',
-            color: '#666'
-        }}>
-            Loading Nationwide Map...
-        </div>
-    )
-});
+// Dynamically import Map with SSR disabled (Leaflet requires window)
+const Map = dynamic(() => import('./Map'), { ssr: false });
 
-export default function HomeMapWrapper() {
-    return <MapComponent />;
+interface HomeMapWrapperProps {
+    exhibitions: Exhibition[];
+}
+
+export default function HomeMapWrapper({ exhibitions }: HomeMapWrapperProps) {
+    return <Map exhibitions={exhibitions} />;
 }
