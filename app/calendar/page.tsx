@@ -49,7 +49,12 @@ export default function CalendarPage() {
                     <span className={styles.dayNumber}>{day}</span>
                     <div className={styles.eventList}>
                         {exhibitions.map(ex => (
-                            <Link key={ex.id} href={`/exhibitions/${ex.id}`} className={styles.eventDot}>
+                            <Link
+                                key={ex.id}
+                                href={ex.officialUrl || '#'}
+                                target={ex.officialUrl ? "_blank" : undefined}
+                                className={styles.eventDot}
+                            >
                                 <span className={styles.eventTitle}>{ex.school}</span>
                             </Link>
                         ))}
@@ -64,11 +69,11 @@ export default function CalendarPage() {
     return (
         <div className={styles.container}>
             <div className={styles.header}>
-                <h1 className={styles.pageTitle}>Exhibition Calendar</h1>
+                <h1 className={styles.pageTitle}>展覧会カレンダー</h1>
                 <div className={styles.controls}>
                     <button onClick={prevMonth} className={styles.navButton}><ChevronLeft /></button>
                     <h2 className={styles.currentDate}>
-                        {currentDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                        {currentDate.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long' })}
                     </h2>
                     <button onClick={nextMonth} className={styles.navButton}><ChevronRight /></button>
                 </div>
@@ -76,14 +81,12 @@ export default function CalendarPage() {
 
             <div className={styles.calendar}>
                 <div className={styles.weekdays}>
-                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                    <div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div>
                 </div>
                 <div className={styles.daysGrid}>
                     {renderCalendarDays()}
                 </div>
             </div>
-
-            {/* Legend or List view for the selected month could go here */}
         </div>
     );
 }

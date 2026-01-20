@@ -53,36 +53,37 @@ export default function ExhibitionsPage() {
 
             <div className={styles.grid}>
                 {MOCK_EXHIBITIONS.map((exhibition) => (
-                    <Link key={exhibition.id} href={`/exhibitions/${exhibition.id}`}>
+                    <Link
+                        key={exhibition.id}
+                        href={exhibition.officialUrl || '#'}
+                        target={exhibition.officialUrl ? "_blank" : undefined}
+                    >
                         <Card hoverable className={styles.card}>
-                            <div className={styles.imageWrapper}>
-                                <img src={exhibition.imageUrl} alt={exhibition.title} className={styles.image} />
-                                <div className={styles.regionBadge}>{exhibition.location.region}</div>
-                            </div>
                             <CardHeader>
-                                <div className={styles.schoolName}>{exhibition.school}</div>
-                                <CardTitle className={styles.cardTitle}>{exhibition.title}</CardTitle>
-                                <div className={styles.tags}>
-                                    {exhibition.tags.map(tag => (
-                                        <span key={tag} className={styles.tag}>#{tag}</span>
-                                    ))}
+                                <div className={styles.headerRow}>
+                                    <div className={styles.schoolName}>{exhibition.school}</div>
+                                    <div className={`${styles.badge} ${exhibition.schoolType === 'University' ? styles.uniBadge : styles.vocBadge}`}>
+                                        {exhibition.schoolType === 'University' ? '大学' : '専門'}
+                                    </div>
                                 </div>
+                                <CardTitle className={styles.cardTitle}>{exhibition.department}</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <div className={styles.infoRow}>
-                                    <MapPin size={16} />
+                                    <MapPin size={16} className={styles.icon} />
                                     <span>{exhibition.location.name}</span>
+                                </div>
+                                <div className={styles.infoRow}>
+                                    <Calendar size={16} className={styles.icon} />
+                                    <span>{new Date(exhibition.startDate).toLocaleDateString('ja-JP')} - {new Date(exhibition.endDate).toLocaleDateString('ja-JP')}</span>
                                 </div>
                             </CardContent>
                             <CardFooter>
                                 <div className={styles.cardFooter}>
-                                    <span className={styles.date}>
-                                        <Calendar size={14} />
-                                        {new Date(exhibition.startDate).toLocaleDateString('ja-JP')} - {new Date(exhibition.endDate).toLocaleDateString('ja-JP')}
+                                    <span className={styles.regionHighlight}>
+                                        {exhibition.location.region}
                                     </span>
-                                    <Link href={`/exhibitions/${exhibition.id}`}>
-                                        <Button size="sm" variant="outline">詳細</Button>
-                                    </Link>
+                                    <Button size="sm" variant="outline">公式サイト <ArrowRight size={14} /></Button>
                                 </div>
                             </CardFooter>
                         </Card>
