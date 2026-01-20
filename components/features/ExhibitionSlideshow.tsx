@@ -14,7 +14,12 @@ export default function ExhibitionSlideshow({ exhibitions }: Props) {
             <h2 className={styles.heading}>まもなく開催</h2>
             <div className={styles.scroller}>
                 {exhibitions.map((exhibition) => (
-                    <Link href={`/exhibitions/${exhibition.id}`} key={exhibition.id} className={styles.card}>
+                    <Link
+                        href={exhibition.officialUrl || '#'}
+                        key={exhibition.id}
+                        className={styles.card}
+                        target={exhibition.officialUrl ? "_blank" : undefined}
+                    >
                         {/* Top decorative bar */}
                         <div className={`${styles.decorationBar} ${exhibition.schoolType === 'University' ? styles.uniBar : styles.vocBar}`}>
                             <span className={styles.typeLabel}>{exhibition.schoolType === 'University' ? '大学' : '専門'}</span>

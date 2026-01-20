@@ -1,7 +1,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1.5rem;
+    padding: 2rem 1.5rem 4rem 1.5rem;
 }
 
 .header {
@@ -20,8 +20,9 @@
 }
 
 .pageTitle {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 800;
+    color: var(--text-main);
 }
 
 .controls {
@@ -31,87 +32,97 @@
     background-color: white;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
 }
 
 .currentDate {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     min-width: 140px;
     text-align: center;
+    color: var(--text-main);
 }
 
 .navButton {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.25rem;
+    padding: 0.4rem;
     border-radius: 50%;
     transition: background-color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--text-sub);
 }
 
 .navButton:hover {
-    background-color: var(--color-bg-sub);
+    background-color: #f5f5f5;
+    color: var(--text-main);
 }
 
 .calendar {
-    border: 1px solid var(--color-border);
-    border-radius: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
     overflow: hidden;
     background-color: white;
+    box-shadow: var(--shadow-sm);
 }
 
 .weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    background-color: var(--color-bg-sub);
-    border-bottom: 1px solid var(--color-border);
+    background-color: #f8f9fa;
+    border-bottom: 1px solid var(--border);
 }
 
 .weekdays div {
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     text-align: center;
-    font-weight: 600;
-    color: var(--color-text-sub);
-    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text-sub);
+    font-size: 0.85rem;
 }
 
 .daysGrid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    /* No defined rows, let content dictate */
 }
 
 .dayCell {
     min-height: 120px;
-    border-right: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     padding: 0.5rem;
     position: relative;
+    background: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .dayCell:nth-child(7n) {
     border-right: none;
 }
 
-/* Fix bottom border for last row is tricky in grid without knowing total rows, 
-   but standard border collapse effect via container border is fine. 
-   Or utilize margin. 
-*/
-
+/* Ensure empty days match dimensions to avoid grid breakage */
 .emptyDay {
-    background-color: #fafafa;
-    border-right: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
+    background-color: #fcfcfc;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    min-height: 120px;
+}
+
+/* Safety for 7th column empty day, though rare/impossible with current logic */
+.emptyDay:nth-child(7n) {
+    border-right: none;
 }
 
 .dayNumber {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-text-sub);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-sub);
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -120,23 +131,26 @@
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    flex: 1;
 }
 
 .eventDot {
     display: block;
-    font-size: 0.7rem;
-    background-color: rgba(0, 86, 218, 0.1);
-    color: var(--color-primary);
-    padding: 0.125rem 0.375rem;
-    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    background-color: var(--color-pale-pink);
+    color: #c2185b;
+    padding: 4px 8px;
+    border-radius: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
     text-decoration: none;
+    font-weight: 600;
 }
 
 .eventDot:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-rose-pink);
     color: white;
+    transform: translateY(-1px);
 }
