@@ -60,10 +60,9 @@ export default function ExhibitionDetailPage({ params }: Props) {
                         </div>
                     </div>
                     <div className={styles.actions}>
-                        {/* <Button variant="outline"><Share2 size={16} /> 共有</Button> */}
                         {exhibition.officialUrl && (
                             <Link href={exhibition.officialUrl} target="_blank">
-                                <Button>公式サイト <Globe size={16} /></Button>
+                                <Button className="primary-button-glow">公式サイトを見る <Globe size={16} /></Button>
                             </Link>
                         )}
                     </div>
