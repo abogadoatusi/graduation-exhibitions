@@ -15,41 +15,31 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Slideshow for "Upcoming" */}
-      <section className={styles.slideshowSection}>
+      <main className={styles.main}>
+        {/* Horizontal Slideshow for Upcoming Exhibitions */}
         <ExhibitionSlideshow exhibitions={upcomingExhibitions} />
-      </section>
 
-      {/* Map Section (App-like: compact) */}
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>現在地から探す</h2>
+        <div className={styles.mapSection}>
+          <h2 className={styles.sectionTitle}>
+            <MapPin className={styles.titleIcon} size={24} />
+            現在地から探す
+          </h2>
+          <div className={styles.mapWrapper}>
+            <HomeMapWrapper />
+          </div>
         </div>
-        <div className={styles.homeMapWrapper}>
-          <HomeMapWrapper />
-        </div>
-        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
-          <Link href="/map" className={styles.mapLink}>
-            <MapPin size={16} /> マップを拡大
-          </Link>
-        </div>
-      </section>
 
-      {/* Quick Regions (Chips style) */}
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
+        <div className={styles.regionSection}>
           <h2 className={styles.sectionTitle}>エリアから探す</h2>
+          <div className={styles.regionGrid}>
+            {regions.map((region) => (
+              <Link href={`/exhibitions?region=${region.id}`} key={region.id} className={styles.regionChip}>
+                {region.name}
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className={styles.regionGrid}>
-          {regions.map((region) => (
-            <Link href={`/exhibitions?region=${region}`} key={region} className={styles.regionChip}>
-              {region}
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <div style={{ height: '4rem' }}></div>
-    </div>
-  );
+      </main>
+      );
 }
+      ```
